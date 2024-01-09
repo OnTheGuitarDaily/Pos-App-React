@@ -1,0 +1,91 @@
+/* *{
+    border: 1px dashed black;
+} */
+
+section{
+    border-radius:8px ;
+    -webkit-box-shadow: 0px 10px 40px -10px #aaa;
+    -moz-box-shadow: 0px 10px 40px -10px  #aaa;
+    box-shadow: 0px 10px 40px -10px #aaa ;
+}
+
+input{
+    border-radius: 50px;
+    border: 1px solid #aaa;
+}
+
+input:focus{
+    border: 1px solid blue;
+}
+
+.itemCard:hover{
+    border: 1px solid blue;
+}
+
+.itemCard{
+    position: relative;
+    height: 240px;
+    border-radius:8px ;
+    -webkit-box-shadow: 0px 10px 40px -15px #aaa;
+    -moz-box-shadow: 0px 10px 40px -15px  #aaa;
+    box-shadow: 0px 10px 40px -15px #aaa ;
+}
+
+.itemCard img{
+    width: 100%;
+}
+
+.ChoosedItems{
+    border-bottom: 1px dashed grey;
+    height: 30%;
+    margin-bottom: 20px;
+    overflow-y: auto;
+}
+
+.id p{
+    margin: 0;
+}
+
+.id{
+        position: absolute;
+        bottom: 4px;
+        left: 15px;
+}
+
+.price{
+        position: absolute;
+        background-color:rgb(13, 110, 253);
+        color: white;
+        border-radius: 10px;
+        top: 10px;
+        left: 15px;
+}
+
+.title{
+    font-weight: 700;
+    }
+
+@media (max-width:992px) {
+    .ProductsList{
+        height: 100vh;
+    }
+    #item{
+        height: 90vh;
+       }
+    }
+
+
+.decrement-btn, .increment-btn{
+    background-color: transparent;
+    border-radius: 8px;
+    border: 1px solid ;
+    height: 30px;
+    width: 30px;
+
+}
+
+.deleteBtn{
+    background-color: transparent;
+    border: none;
+    height: 40px;
+}

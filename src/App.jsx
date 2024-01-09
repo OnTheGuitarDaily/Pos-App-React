@@ -3,6 +3,7 @@ import store from "./App/Store"
 import { createBrowserRouter, createRoutesFromElements, Route,  RouterProvider } from 'react-router-dom'
 import LandingPage from "./Components/LandingPage/LandingPage"
 import 'bootstrap/dist/css/bootstrap.min.css';
+import './index.css'
 
 const router = createBrowserRouter(
   createRoutesFromElements(
