@@ -1,14 +1,14 @@
 import Swal from 'sweetalert2';
 
-export default function ProductList({data}) {
+export default function ProductList({ data, updateCartProducts }) {
   if (!data || (data.length === 0)) {
     return <div className='col-12 text-center loading'>Loading...</div>;
 } 
   const handleClick = (description, id, image, image_title, name, price) => {
-    const existingCartProducts = JSON.parse(localStorage.getItem('cartProducts')) || [];
-    const isProductAlreadyAdded = existingCartProducts.some(product => product.id === id);
+    const existingStoredProducts = JSON.parse(localStorage.getItem('cartProducts')) || [];
+    const isProductAlreadyStored = existingStoredProducts.some(product => product.id === id);
   
-    if (!isProductAlreadyAdded) {
+    if (!isProductAlreadyStored) {
       const newProduct = {
         description: description,
         id: id,
@@ -18,6 +18,7 @@ export default function ProductList({data}) {
         price: price,
         qty: 1
       };
+      console.log('Adding product to localStorage:', newProduct);
       Swal.fire({
         position: 'top-end',
         icon: 'success',
@@ -25,7 +26,8 @@ export default function ProductList({data}) {
         showConfirmButton: false,
         timer: 1500
       })
-      const updatedCartProducts = [...existingCartProducts, newProduct];
+      updateCartProducts(newProduct);
+      const updatedCartProducts = [...existingStoredProducts, newProduct];
       localStorage.setItem('cartProducts', JSON.stringify(updatedCartProducts));
     } else {
       Swal.fire(

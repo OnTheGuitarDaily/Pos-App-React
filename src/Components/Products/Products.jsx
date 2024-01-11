@@ -4,12 +4,12 @@ import Search from './Search/Search';
 import { useDispatch, useSelector } from 'react-redux';
 import { fetchDataAsync } from '../../Actions/Actions';
 
-export default function Products() {
+export default function Products({ updateCartProducts }) {
   const dispatch = useDispatch();
   const state = useSelector((state) => state.products);
 
   const [searchInput, setSearchInput] = useState('');
-  const [filteredProducts, setFilteredProducts] = useState([]);
+  const [filteredProducts, setFilteredProducts] = useState(state.products);
 
   useEffect(() => {
     dispatch(fetchDataAsync());
@@ -30,7 +30,7 @@ export default function Products() {
         </div>
       </header>
       <Search onSearch={(value) => setSearchInput(value)} />
-      <ProductList data={filteredProducts} />
+      <ProductList data={filteredProducts} updateCartProducts={updateCartProducts}/>
     </section>
   );
 }

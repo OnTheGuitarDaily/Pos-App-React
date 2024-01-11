@@ -1,12 +1,14 @@
+import { useEffect, useState } from "react"
 import CartItems from './CartItems/CartItems'
 
-export default function Cart() {
+export default function Cart({cartProducts, setCartProducts}) {
+
   return (
     <section className='cart col-12 col-lg-6 mt-3 py-3  mx-auto pt-3"'>
       <div className="d-flex col-12 container px-3 gap-3 align-items-center">
           <h1>Cart</h1>
       </div>
-      <CartItems/>
+      <CartItems setCartProducts={setCartProducts} products = {cartProducts}/>
     </section>
   )
 }
