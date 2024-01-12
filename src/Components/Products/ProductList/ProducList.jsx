@@ -2,7 +2,7 @@ import Swal from 'sweetalert2';
 
 export default function ProductList({ data, updateCartProducts }) {
   if (!data || (data.length === 0)) {
-    return <div className='col-12 text-center loading'>Loading...</div>;
+    return <div className='col-12 text-center my-5 py-5'>Loading...</div>;
 } 
   const handleClick = (description, id, image, image_title, name, price) => {
     const existingStoredProducts = JSON.parse(localStorage.getItem('cartProducts')) || [];

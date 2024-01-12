@@ -3,6 +3,7 @@ import ProductList from './ProductList/ProducList'
 import Search from './Search/Search';
 import { useDispatch, useSelector } from 'react-redux';
 import { fetchDataAsync } from '../../Actions/Actions';
+import StorefrontIcon from '@mui/icons-material/Storefront';
 
 export default function Products({ updateCartProducts }) {
   const dispatch = useDispatch();
@@ -26,7 +27,10 @@ export default function Products({ updateCartProducts }) {
     <section className="col-12 container pt-3 col-lg-10 col-xl-6">
       <header className="d-flex flex-column gap-2 justify-content-center align-items-center">
         <div className="d-flex col-12 container px-3 gap-3 align-items-center">
-          <h1>Products</h1>
+          <h1>
+            <StorefrontIcon sx={{ fontSize: 40 }} color="primary"/>
+            Products
+          </h1>
         </div>
       </header>
       <Search onSearch={(value) => setSearchInput(value)} />
