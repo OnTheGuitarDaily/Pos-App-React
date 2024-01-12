@@ -1,13 +1,14 @@
-import { useEffect, useState } from 'react';
+import { useEffect } from 'react';
 import DeleteIcon from '@mui/icons-material/Delete';
 import Swal from 'sweetalert2';
 import Calculator from '../Calculator/Calculator';
 
 export default function CartItems({ products, setCartProducts }) {
-  useEffect(() => {
 
+  useEffect(() => {
     setCartProducts(products);
   }, [products]);
+
 
   const handleQtyChange = (productId, newQty) => {
     const updatedCartProducts = products.map((item) => {
@@ -38,8 +39,6 @@ export default function CartItems({ products, setCartProducts }) {
       }
     });
   };
-
-  const total = products.reduce((total, item) => total + item.price * item.qty, 0);
 
 
   return (
@@ -105,7 +104,7 @@ export default function CartItems({ products, setCartProducts }) {
               </article>
             ))}
           </main>
-          <Calculator products={products} total={total}/>
+          <Calculator products={products} setCartProducts={setCartProducts}/>
         </>
       )}
     </>

@@ -31,6 +31,9 @@ const cartSlice = createSlice({
       state.totalPrice =
         state.productsTotalPrice + taxAmount - discountAmount + state.shipping;
     },
+    reset: (state) => {
+      Object.assign(state, initialState);
+    },
   }
 });
 
@@ -40,6 +43,7 @@ export const {
   setShipping,
   setProductsTotalPrice,
   calculateTotalPrice,
+  reset
 } = cartSlice.actions;
 
 export default cartSlice.reducer

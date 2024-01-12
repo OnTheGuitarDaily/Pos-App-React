@@ -17,8 +17,7 @@ export default function ProductList({ data, updateCartProducts }) {
         name: name,
         price: price,
         qty: 1
-      };
-      console.log('Adding product to localStorage:', newProduct);
+      }
       Swal.fire({
         position: 'top-end',
         icon: 'success',

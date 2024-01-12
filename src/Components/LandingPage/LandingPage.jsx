@@ -15,7 +15,7 @@ export default function LandingPage() {
   };
 
   return (
-    <main className="d-lg-flex justify-content-center align-items-center gap-1">
+    <main className="d-flex flex-column flex-xl-row justify-content-center align-items-center gap-1">
       <Cart setCartProducts={setCartProducts} cartProducts={cartProducts}/>
       <Products updateCartProducts={updateCartProducts} />
     </main>

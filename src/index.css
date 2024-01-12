@@ -1,9 +1,13 @@
-/* *{
-    border: 1px dashed black;
-} */
+*{
+    /* border: 1px dashed black; */
+    padding: 0;
+    margin: 0;
+}
+
 
 section{
     border-radius:8px ;
+    height: auto;
     -webkit-box-shadow: 0px 10px 40px -10px #aaa;
     -moz-box-shadow: 0px 10px 40px -10px  #aaa;
     box-shadow: 0px 10px 40px -10px #aaa ;
@@ -24,7 +28,7 @@ input:focus{
 
 .itemCard{
     position: relative;
-    height: 240px;
+    height: auto;
     border-radius:8px ;
     -webkit-box-shadow: 0px 10px 40px -15px #aaa;
     -moz-box-shadow: 0px 10px 40px -15px  #aaa;
@@ -65,15 +69,6 @@ input:focus{
     font-weight: 700;
     }
 
-@media (max-width:992px) {
-    .ProductsList{
-        height: 100vh;
-    }
-    #item{
-        height: 90vh;
-       }
-    }
-
 
 .decrement-btn, .increment-btn{
     background-color: transparent;
@@ -89,3 +84,32 @@ input:focus{
     border: none;
     height: 40px;
 }
+
+#resetBtn{
+    background-color: red;
+    border: 1px solid black;
+    border-radius: 10px;
+    width: 20%;
+}
+#invoice{
+    background-color: green;
+    border: 1px solid black;
+    border-radius: 10px;
+    width: 20%;
+}
+
+@media (min-width: 1200px) {
+  section{
+    height: 100vh;
+  }
+  .ProductsList{
+   height: 75vh;
+   overflow-y: scroll;
+  }
+  .ChoosedItems{
+    height: 50%;
+  }
+  .itemCard{
+    height: 240px;
+  }
+ }
